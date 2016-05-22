@@ -14,7 +14,7 @@ public class SemaphoreController {
     @Autowired
     private SemaphoreRepository semaphoreRepository;
 
-    @RequestMapping("/semaphores")
+    @RequestMapping("/getSemaphores")
     public String getSemaphores() {
 
 

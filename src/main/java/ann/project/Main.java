@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @ComponentScan(basePackages = "ann.project")
 public class Main {
 
-    @RequestMapping("/home")
+    @RequestMapping("/")
     String home() {
-        return "home";
+        return "<br><a href='/getSemaphores'>/getSemaphores</a></br>" +
+                "<br><a href='/getSharedMemory'>/getSharedMemory</a></br>";
     }
 
 

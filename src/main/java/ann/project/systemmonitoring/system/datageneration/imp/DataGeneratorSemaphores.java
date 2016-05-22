@@ -9,10 +9,12 @@ import java.util.Random;
 
 public class DataGeneratorSemaphores implements DataGenerate<Semaphore> {
 
+    private Random random = new Random();
+
     @Override
     public Semaphore generateData() {
         Semaphore data = new Semaphore();
-        Random random = new Random();
+
         data.setKey(random.nextInt(100) + 1000);
         data.setShm_id(random.nextInt(99999 - 10000) + 10000);
         data.setPermission("–rw-r----");

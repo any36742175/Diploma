@@ -36,7 +36,7 @@ public class System {
         }
     }
 
-    @Before("execution(* ann.project.systemmonitoring.controller.SharedMemoryController.*getSemaphores())")
+    @Before("execution(* ann.project.systemmonitoring.controller.SemaphoreController.*getSemaphores())")
     private void createDataForSemaphore() {
         Iterable<Semaphore> all = semaphoreRepository.findAll();
         semaphoreRepository.delete(all);

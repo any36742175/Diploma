@@ -9,10 +9,11 @@ import java.util.Random;
 
 public class DataGeneratorSharedMemory implements DataGenerate<SharedMemory> {
 
+    private Random random = new Random();
+
     @Override
     public SharedMemory generateData() {
         SharedMemory data = new SharedMemory();
-        Random random = new Random();
         data.setKey(random.nextInt(100) + 1000);
         data.setShm_id(random.nextInt(99999 - 10000) + 10000);
         data.setPermission("–rw-r----");
