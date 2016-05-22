@@ -1,6 +1,6 @@
-package ann.project.systemmonitoring.datageneration.imp;
+package ann.project.systemmonitoring.system.datageneration.imp;
 
-import ann.project.systemmonitoring.datageneration.DataGenerate;
+import ann.project.systemmonitoring.system.datageneration.DataGenerate;
 import ann.project.systemmonitoring.entity.Semaphore;
 
 import java.util.Date;

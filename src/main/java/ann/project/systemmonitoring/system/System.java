@@ -1,7 +1,7 @@
 package ann.project.systemmonitoring.system;
 
-import ann.project.systemmonitoring.datageneration.imp.DataGeneratorSemaphores;
-import ann.project.systemmonitoring.datageneration.imp.DataGeneratorSharedMemory;
+import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorSemaphores;
+import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorSharedMemory;
 import ann.project.systemmonitoring.entity.Semaphore;
 import ann.project.systemmonitoring.entity.SharedMemory;
 import ann.project.systemmonitoring.repository.SemaphoreRepository;
