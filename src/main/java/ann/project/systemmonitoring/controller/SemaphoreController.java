@@ -23,23 +23,15 @@ public class SemaphoreController {
     @RequestMapping("/getSemaphores")
     public String index() {
         return "getSemaphores";
-        //return "getSemaphores";
     }
 
-    /*@ModelAttribute("array")
-    public int[] array(*//*@Value("${application.message:Hello World}") String message*//*) {
-        return new int[]{1,2,9};
-        //return message;
-    }*/
-
     @ModelAttribute("semaphoreList")
-    public List<Semaphore> getSemaphores(/*@Value("${application.message:Hello World}") String message*/) {
+    public List<Semaphore> getSemaphores() {
         Iterator<Semaphore> iterator = semaphoreRepository.findAll().iterator();
         List<Semaphore> semaphoreList = new ArrayList<>();
         while (iterator.hasNext()){
             semaphoreList.add(iterator.next());
         }
         return semaphoreList;
-        //return message;
     }
 }

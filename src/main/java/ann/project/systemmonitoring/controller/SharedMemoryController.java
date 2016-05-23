@@ -22,20 +22,13 @@ public class SharedMemoryController {
         return "getSharedMemory";
     }
 
-    /*@ModelAttribute("array")
-    public int[] array(*//*@Value("${application.message:Hello World}") String message*//*) {
-        return new int[]{1,2,9};
-        //return message;
-    }*/
-
     @ModelAttribute("sharedMemoryList")
-    public List<SharedMemory> getSharedMemory(/*@Value("${application.message:Hello World}") String message*/) {
+    public List<SharedMemory> getSharedMemory() {
         Iterator<SharedMemory> iterator = sharedMemoryRepository.findAll().iterator();
         List<SharedMemory> sharedMemoryList = new ArrayList<>();
         while (iterator.hasNext()){
             sharedMemoryList.add(iterator.next());
         }
         return sharedMemoryList;
-        //return message;
     }
 }
