@@ -20,7 +20,7 @@ public class Terminal {
     private int currentNode;
 
     @Column(name = "CONNECTION_TIME")//todo
-    private String connetcionTime;
+    private String connectionTime;
 
     @Column(name = "PREVIOUS_NODE")//todo
     private int previousNode;
@@ -56,11 +56,11 @@ public class Terminal {
     }
 
     public String getConnetcionTime() {
-        return connetcionTime;
+        return connectionTime;
     }
 
     public void setConnetcionTime(String connetcionTime) {
-        this.connetcionTime = connetcionTime;
+        this.connectionTime = connetcionTime;
     }
 
     public int getPreviousNode() {
@@ -93,7 +93,7 @@ public class Terminal {
                 "terminalID='" + terminalID + '\'' +
                 ", terminalType='" + terminalType + '\'' +
                 ", currentNode=" + currentNode +
-                ", connetcionTime='" + connetcionTime + '\'' +
+                ", connetcionTime='" + connectionTime + '\'' +
                 ", previousNode='" + previousNode + '\'' +
                 ", owningNodes='" + owningNodes + '\'' +
                 ", statuses='" + statuses + '\'' +

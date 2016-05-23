@@ -19,6 +19,8 @@ public class Main {
     String home() {
         return "<br><a href='/getSemaphores'>/getSemaphores</a></br>" +
              "<br><a href='/index'>/index</a></br>" +
+             "<br><a href='/getIPCQueue'>/getIPCQueue</a></br>" +
+             "<br><a href='/getTerminal'>/getTerminal</a></br>" +
                 "<br><a href='/getSharedMemory'>/getSharedMemory</a></br>";
     }
 

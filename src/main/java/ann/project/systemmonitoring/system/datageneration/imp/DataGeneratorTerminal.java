@@ -17,8 +17,10 @@ public class DataGeneratorTerminal implements DataGenerate<Terminal> {
         Terminal data = new Terminal();
         data.setTerminalID("" + random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10));
         data.setTerminalType("ATM");//todo
-        data.setCurrentNode(Integer.valueOf(Integer.toString(random.nextInt(3)+9),2));
-        data.setPreviousNode(Integer.valueOf(Integer.toString(random.nextInt(3)+9),2));
+        //data.setCurrentNode(Integer.valueOf(Integer.toString(random.nextInt(3)+9),2));
+        data.setCurrentNode(random.nextInt(3)+9);
+        //data.setPreviousNode(Integer.valueOf(Integer.toString(random.nextInt(3)+9),2));
+        data.setPreviousNode(random.nextInt(3)+9);
 
         java.text.SimpleDateFormat sdf =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

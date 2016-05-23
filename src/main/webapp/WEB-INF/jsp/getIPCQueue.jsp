@@ -8,17 +8,18 @@
 
 
 <table border="1">
-    <caption>SEMAPHORE</caption>
+    <caption>IPC Queue</caption>
     <tr>
-        <th>QUEUE Id</th>
+        <th>KEY</th>
+        <th>SHM ID</th>
         <th>Permission</th>
-        <th>Queue size</th>
-        <th>Messages</th>
+        <th>Sem. per key</th>
+        <th>last Change</th>
         <th>last Operation</th>
-        <th>Queue type</th>
+        <th>Type</th>
         <th>Owner</th>
     </tr>
-    <c:forEach var="item" items="${semaphoreList}">
+    <c:forEach var="item" items="${IPCQueueList}">
     <tr><td><c:out value="${item.getQueueId()}"/></td>
         <td>SHM ID</td>
         <td>Permission</td>

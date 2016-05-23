@@ -8,18 +8,18 @@
 
 
 <table border="1">
-    <caption>SEMAPHORE</caption>
+    <caption>Terminal</caption>
     <tr>
-        <th>QUEUE Id</th>
-        <th>Permission</th>
-        <th>Queue size</th>
-        <th>Messages</th>
-        <th>last Operation</th>
-        <th>Queue type</th>
-        <th>Owner</th>
+        <th>Terminal ID</th>
+        <th>Terminal type</th>
+        <th>Current node</th>
+        <th>Connection time</th>
+        <th>Previous node</th>
+        <th>Owning nodes</th>
+        <th>statuses</th>
     </tr>
-    <c:forEach var="item" items="${semaphoreList}">
-    <tr><td><c:out value="${item.getQueueId()}"/></td>
+    <c:forEach var="item" items="${terminalList}">
+    <tr><td><c:out value="${item.getTerminalID()}"/></td>
         <td>SHM ID</td>
         <td>Permission</td>
         <td>Size</td>
