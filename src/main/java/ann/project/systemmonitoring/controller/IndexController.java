@@ -12,14 +12,14 @@ import java.util.Iterator;
 import java.util.List;
 
 @Controller
-public class SharedMemoryController {
+public class IndexController {
 
     @Autowired
     private SharedMemoryRepository sharedMemoryRepository;
 
-    @RequestMapping("/getSharedMemory")
+    @RequestMapping("/index")
     public String index() {
-        return "getSharedMemory";
+        return "index";
     }
 
     /*@ModelAttribute("array")
@@ -29,7 +29,7 @@ public class SharedMemoryController {
     }*/
 
     @ModelAttribute("sharedMemoryList")
-    public List<SharedMemory> getSharedMemory(/*@Value("${application.message:Hello World}") String message*/) {
+    public List<SharedMemory> array(/*@Value("${application.message:Hello World}") String message*/) {
         Iterator<SharedMemory> iterator = sharedMemoryRepository.findAll().iterator();
         List<SharedMemory> sharedMemoryList = new ArrayList<>();
         while (iterator.hasNext()){
