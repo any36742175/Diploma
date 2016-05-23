@@ -1,29 +1,45 @@
 package ann.project.systemmonitoring.controller;
 
 import ann.project.systemmonitoring.entity.Semaphore;
+import ann.project.systemmonitoring.entity.SharedMemory;
 import ann.project.systemmonitoring.repository.SemaphoreRepository;
+import ann.project.systemmonitoring.repository.SharedMemoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
-@RestController
+@Controller
 public class SemaphoreController {
 
     @Autowired
     private SemaphoreRepository semaphoreRepository;
 
     @RequestMapping("/getSemaphores")
-    public String getSemaphores() {
+    public String index() {
+        return "getSemaphores";
+        //return "getSemaphores";
+    }
 
+    /*@ModelAttribute("array")
+    public int[] array(*//*@Value("${application.message:Hello World}") String message*//*) {
+        return new int[]{1,2,9};
+        //return message;
+    }*/
 
+    @ModelAttribute("semaphoreList")
+    public List<Semaphore> getSemaphores(/*@Value("${application.message:Hello World}") String message*/) {
         Iterator<Semaphore> iterator = semaphoreRepository.findAll().iterator();
-        String s = "";
-        s += "<br>Semaphores</br>";
-        while (iterator.hasNext()) {
-            s += "<br>" + iterator.next().toString();
+        List<Semaphore> semaphoreList = new ArrayList<>();
+        while (iterator.hasNext()){
+            semaphoreList.add(iterator.next());
         }
-        return s;
+        return semaphoreList;
+        //return message;
     }
 }

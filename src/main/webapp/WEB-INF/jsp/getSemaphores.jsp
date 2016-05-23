@@ -8,18 +8,18 @@
 
 
 <table border="1">
-    <caption>SharedMemory</caption>
+    <caption>SEMAPHORE</caption>
     <tr>
         <th>KEY</th>
         <th>SHM ID</th>
         <th>Permission</th>
-        <th>Size</th>
-        <th>Proc number</th>
-        <th>Last Att, Det</th>
+        <th>Sem. per key</th>
+        <th>last Change</th>
+        <th>last Operation</th>
         <th>Type</th>
         <th>Owner</th>
     </tr>
-    <c:forEach var="item" items="${sharedMemoryList}">
+    <c:forEach var="item" items="${semaphoreList}">
     <tr><td><c:out value="${item.getKey()}"/></td>
         <td>SHM ID</td>
         <td>Permission</td>
