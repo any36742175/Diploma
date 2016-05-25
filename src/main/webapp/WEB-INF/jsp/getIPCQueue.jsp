@@ -6,7 +6,6 @@
 <body>
 <%-- <h1>${message}</h1>--%>
 
-
 <table border="1">
     <caption>IPC Queue</caption>
     <tr>

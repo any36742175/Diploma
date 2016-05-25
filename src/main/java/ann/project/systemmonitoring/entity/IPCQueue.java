@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "IPC_QUEUES")
-public class IPCQueue {
+public class IPCQueue{
     @Id
     @Column(name = "ID")
     //@GeneratedValue

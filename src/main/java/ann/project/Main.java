@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan
 public class Main {
 
+
     @RequestMapping("/")
     String home() {
         return "<br><a href='/getSemaphores'>/getSemaphores</a></br>" +
