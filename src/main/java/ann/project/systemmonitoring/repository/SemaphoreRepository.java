@@ -9,4 +9,5 @@ public interface SemaphoreRepository extends CrudRepository<Semaphore, Long> {
 
     Page<Semaphore> findAll(Pageable pageable);
 
+
 }

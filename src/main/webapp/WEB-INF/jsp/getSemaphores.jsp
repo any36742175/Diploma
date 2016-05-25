@@ -19,7 +19,7 @@
         <th>Owner</th>
     </tr>
     <c:forEach var="item" items="${semaphoreList}">
-    <tr><td><c:out value="${item.getQueueId()}"/></td>
+    <tr><td><c:out value="${item.getKey()}"/></td>
         <td>SHM ID</td>
         <td>Permission</td>
         <td>Size</td>
