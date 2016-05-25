@@ -29,17 +29,14 @@
 </script>
 <table>
     <tr>
-        <td><button type="button" onclick="loadDoc('/getSharedMemory', 'getSharedMemory')">Shared memory</button></td>
-        <td><button type="button" onclick="loadDoc('/getSemaphores', 'getSemaphores')">Semaphores</button></td>
-        <td><button type="button" onclick="loadDoc('/getIPCQueue', 'getIPCQueue')">IPC queues</button></td>
-        <td><button type="button" onclick="loadDoc('/getTerminal', 'getTerminal')">Terminals</button></td>
+        <td><button type="button" onclick="loadDoc('/getSharedMemory', 'table')">Shared memory</button></td>
+        <td><button type="button" onclick="loadDoc('/getSemaphores', 'table')">Semaphores</button></td>
+        <td><button type="button" onclick="loadDoc('/getIPCQueue', 'table')">IPC queues</button></td>
+        <td><button type="button" onclick="loadDoc('/getTerminal', 'table')">Terminals</button></td>
     </tr>
     <tbody>
     <tr>
-        <td><div id="getSharedMemory"></div></td>
-        <td><div id="getSemaphores"></div></td>
-        <td><div id="getIPCQueue"></div></td>
-        <td><div id="getTerminal"></div></td>
+        <td colspan="4"><div id="table"></div></td>
     </tr>
     </tbody>
 </table>
