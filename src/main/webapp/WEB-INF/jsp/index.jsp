@@ -39,6 +39,7 @@
         <td><button type="button" onclick="loadDoc('/getSemaphores', 'tableView')">Semaphores</button></td>
         <td><button type="button" onclick="loadDoc('/getIPCQueue', 'tableView')">IPC queues</button></td>
         <td><button type="button" onclick="loadDoc('/getTerminal', 'tableView')">Terminals</button></td>
+        <td><button type="button" onclick="loadDoc('/getTCPConnection', 'tableView')">TCP</button></td>
     </tr>
     <tbody>
 

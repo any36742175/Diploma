@@ -1,17 +1,8 @@
 package ann.project.systemmonitoring.system;
 
-import ann.project.systemmonitoring.entity.imp.IPCQueueImp;
-import ann.project.systemmonitoring.entity.imp.TerminalImp;
-import ann.project.systemmonitoring.repository.IPCQueueRepository;
-import ann.project.systemmonitoring.repository.TerminalRepository;
-import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorIPCQueue;
-import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorSemaphores;
-import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorSharedMemory;
-import ann.project.systemmonitoring.entity.imp.SemaphoreImp;
-import ann.project.systemmonitoring.entity.imp.SharedMemoryImp;
-import ann.project.systemmonitoring.repository.SemaphoreRepository;
-import ann.project.systemmonitoring.repository.SharedMemoryRepository;
-import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorTerminal;
+import ann.project.systemmonitoring.entity.imp.*;
+import ann.project.systemmonitoring.repository.*;
+import ann.project.systemmonitoring.system.datageneration.imp.*;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +25,9 @@ public class System {
 
     @Autowired
     private TerminalRepository terminalRepository;
+
+    @Autowired
+    private TCPConnectionRepository tcpConnectionRepository;
 
     private Random random = new Random();
 
@@ -79,6 +73,17 @@ public class System {
         for (int i = 0; i < random.nextInt(100); i++) {
             TerminalImp terminalImp = new DataGeneratorTerminal().generateData();
             terminalRepository.save(terminalImp);
+        }
+    }
+
+    @Before("execution(* ann.project.systemmonitoring.controller.TCPConnectionController.getTCPConnectionList())")
+    private void createDataForTCPConnection() {
+        Iterable<TCPConnectionImp> all = tcpConnectionRepository.findAll();
+        tcpConnectionRepository.delete(all);
+
+        for (int i = 0; i < random.nextInt(20); i++) {
+            TCPConnectionImp terminalImp = new DataGeneratorTCPConnection().generateData();
+            tcpConnectionRepository.save(terminalImp);
         }
     }
 }
