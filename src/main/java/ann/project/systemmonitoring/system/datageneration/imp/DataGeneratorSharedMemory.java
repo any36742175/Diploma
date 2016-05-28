@@ -29,7 +29,7 @@ public class DataGeneratorSharedMemory implements DataGenerate<SharedMemoryImp> 
         if (data.getType().equals("")) {
             data.setOWNER("");
         } else {
-            data.setOWNER(ConstSharedMemory.owners.get(random.nextInt(ConstSharedMemory.owners.size())));
+            data.setOWNER(ConstSharedMemory.owners.get(random.nextInt(ConstSharedMemory.owners.size() - 1)));
         }
         return data;
 

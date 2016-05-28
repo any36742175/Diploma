@@ -27,7 +27,11 @@ public class DataGeneratorSemaphores implements DataGenerate<SemaphoreImp> {
         data.setLastChange(sdf.format(new Date(java.lang.System.currentTimeMillis() - 1000 * 60)));
         data.setLastOperation(sdf.format(new Date(java.lang.System.currentTimeMillis() - 1000 * 60 * 2)));
         data.setType(ConstSemaphore.types.get(random.nextInt(ConstSemaphore.types.size())));
-        data.setOWNER(ConstSemaphore.owners.get(random.nextInt(ConstSemaphore.owners.size())));
+        if (data.getType().equals("")) {
+            data.setOWNER("");
+        } else {
+            data.setOWNER(ConstSemaphore.owners.get(random.nextInt(ConstSemaphore.owners.size() - 1)));
+        }
         return data;
 
     }

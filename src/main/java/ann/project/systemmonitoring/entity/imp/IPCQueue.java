@@ -20,13 +20,13 @@ public class IPCQueue{
     private int queueSize;
 
     @Column(name = "MESSAGES")//todo
-    private String messages;
+    private int messages;
 
     @Column(name = "LAST_OPERATION")//todo
     private String lastOperation;
 
     @Column(name = "QUEUE_TYPE")
-    private String queueType;
+    private String Type;
 
     @Column(name = "OWNER")
     private String OWNER;
@@ -55,11 +55,11 @@ public class IPCQueue{
         this.queueSize = queueSize;
     }
 
-    public String getMessages() {
+    public int getMessages() {
         return messages;
     }
 
-    public void setMessages(String messages) {
+    public void setMessages(int messages) {
         this.messages = messages;
     }
 
@@ -71,12 +71,12 @@ public class IPCQueue{
         this.lastOperation = lastOperation;
     }
 
-    public String getQueueType() {
-        return queueType;
+    public String getType() {
+        return Type;
     }
 
-    public void setQueueType(String queueType) {
-        this.queueType = queueType;
+    public void setType(String queueType) {
+        this.Type = queueType;
     }
 
     public String getOWNER() {
@@ -95,7 +95,7 @@ public class IPCQueue{
                 ", queueSize=" + queueSize +
                 ", messages='" + messages + '\'' +
                 ", lastOperation='" + lastOperation + '\'' +
-                ", queueType='" + queueType + '\'' +
+                ", Type='" + Type + '\'' +
                 ", OWNER='" + OWNER + '\'' +
                 '}';
     }
