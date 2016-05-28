@@ -111,4 +111,35 @@ public class SharedMemory {
                 ", OWNER='" + OWNER + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        SharedMemory that = (SharedMemory) o;
+
+        if (key != that.key) return false;
+        if (shm_id != that.shm_id) return false;
+        if (size != that.size) return false;
+        if (procNumber != that.procNumber) return false;
+        if (permission != null ? !permission.equals(that.permission) : that.permission != null) return false;
+        if (lastAttDet != null ? !lastAttDet.equals(that.lastAttDet) : that.lastAttDet != null) return false;
+        if (type != null ? !type.equals(that.type) : that.type != null) return false;
+        return OWNER != null ? OWNER.equals(that.OWNER) : that.OWNER == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = key;
+        result = 31 * result + shm_id;
+        result = 31 * result + (permission != null ? permission.hashCode() : 0);
+        result = 31 * result + size;
+        result = 31 * result + procNumber;
+        result = 31 * result + (lastAttDet != null ? lastAttDet.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (OWNER != null ? OWNER.hashCode() : 0);
+        return result;
+    }
 }

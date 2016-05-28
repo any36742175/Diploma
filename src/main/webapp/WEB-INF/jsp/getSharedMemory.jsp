@@ -29,16 +29,25 @@
         <th>Type</th>
         <th>Owner</th>
     </tr>
-    <c:forEach var="item" items="${sharedMemoryList}">
-        <tr>
+    <c:forEach var="item" items="${SharedMemoryRepeatList}">
+        <tr
+        <c:choose>
+            <c:when test="${item.isRepeat() || item.getType().equals(\"\")}">
+                <c:out value="${\"bgcolor=#F34F4F\"}"/>
+            </c:when>
+            <c:otherwise>
+                <c:out value="${\"bgcolor=#A7D152\"}"/>
+            </c:otherwise>
+        </c:choose>
+        >
             <td><c:out value="${item.getKey()}"/></td>
-            <td>SHM ID</td>
-            <td>Permission</td>
-            <td>Size</td>
-            <td>Proc number</td>
-            <td>Last Att, Det</td>
-            <td>Type</td>
-            <td>Owner</td>
+            <td><c:out value="${item.getShm_id()}"/></td>
+            <td><c:out value="${item.getPermission()}"/></td>
+            <td><c:out value="${item.getSize()}"/></td>
+            <td><c:out value="${item.getProcNumber()}"/></td>
+            <td><c:out value="${item.getLastAttDet()}"/></td>
+            <td><c:out value="${item.getType()}"/></td>
+            <td><c:out value="${item.getOWNER()}"/></td>
         </tr>
     </c:forEach>
 </table>
