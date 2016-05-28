@@ -1,6 +1,6 @@
 package ann.project.systemmonitoring.controller;
 
-import ann.project.systemmonitoring.entity.imp.Terminal;
+import ann.project.systemmonitoring.entity.imp.TerminalImp;
 import ann.project.systemmonitoring.repository.TerminalRepository;
 import ann.project.systemmonitoring.util.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +24,13 @@ public class TerminalController {
     }
 
     @ModelAttribute("terminalList")
-    public List<Terminal> getTerminal() {
-        Iterator<Terminal> iterator = terminalRepository.findAll().iterator();
-        List<Terminal> terminalList = new ArrayList<>();
+    public List<TerminalImp> getTerminal() {
+        Iterator<TerminalImp> iterator = terminalRepository.findAll().iterator();
+        List<TerminalImp> terminalImpList = new ArrayList<>();
         while (iterator.hasNext()){
-            terminalList.add(iterator.next());
+            terminalImpList.add(iterator.next());
         }
-        return terminalList;
+        return terminalImpList;
     }
 
     @ModelAttribute("dateTime")

@@ -1,12 +1,12 @@
 package ann.project.systemmonitoring.repository;
 
-import ann.project.systemmonitoring.entity.imp.IPCQueue;
+import ann.project.systemmonitoring.entity.imp.IPCQueueImp;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
-public interface IPCQueueRepository extends CrudRepository<IPCQueue, Long> {
+public interface IPCQueueRepository extends CrudRepository<IPCQueueImp, Long> {
 
-    Page<IPCQueue> findAll(Pageable pageable);
+    Page<IPCQueueImp> findAll(Pageable pageable);
 
 }

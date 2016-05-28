@@ -1,5 +1,7 @@
 package ann.project.systemmonitoring.entity.imp;
 
+import ann.project.systemmonitoring.entity.Terminal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TERMINAL")
-public class Terminal {
+public class TerminalImp implements Terminal {
     @Id
     @Column(name = "ID")
     //@GeneratedValue
@@ -89,7 +91,7 @@ public class Terminal {
 
     @Override
     public String toString() {
-        return "Terminal{" +
+        return "TerminalImp{" +
                 "terminalID='" + terminalID + '\'' +
                 ", terminalType='" + terminalType + '\'' +
                 ", currentNode=" + currentNode +

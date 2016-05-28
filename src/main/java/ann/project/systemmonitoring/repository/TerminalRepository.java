@@ -1,12 +1,12 @@
 package ann.project.systemmonitoring.repository;
 
-import ann.project.systemmonitoring.entity.imp.Terminal;
+import ann.project.systemmonitoring.entity.imp.TerminalImp;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
-public interface TerminalRepository extends CrudRepository<Terminal, Long> {
+public interface TerminalRepository extends CrudRepository<TerminalImp, Long> {
 
-    Page<Terminal> findAll(Pageable pageable);
+    Page<TerminalImp> findAll(Pageable pageable);
 
 }

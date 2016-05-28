@@ -1,6 +1,6 @@
 package ann.project.systemmonitoring.system.datageneration.imp;
 
-import ann.project.systemmonitoring.entity.imp.IPCQueue;
+import ann.project.systemmonitoring.entity.imp.IPCQueueImp;
 import ann.project.systemmonitoring.system.datageneration.DataGenerate;
 import ann.project.systemmonitoring.system.datageneration.consts.ConstIPCQueue;
 
@@ -8,13 +8,13 @@ import java.util.Date;
 import java.util.Random;
 
 
-public class DataGeneratorIPCQueue implements DataGenerate<IPCQueue> {
+public class DataGeneratorIPCQueue implements DataGenerate<IPCQueueImp> {
 
     private Random random = new Random();
 
     @Override
-    public IPCQueue generateData() {
-        IPCQueue data = new IPCQueue();
+    public IPCQueueImp generateData() {
+        IPCQueueImp data = new IPCQueueImp();
         data.setQueueId("" + random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10));
         data.setPermission("–rw-r----");
         data.setQueueSize(random.nextInt(99999999 - 1000000) + 1000000);

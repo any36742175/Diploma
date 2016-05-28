@@ -1,6 +1,6 @@
 package ann.project.systemmonitoring.system.datageneration.imp;
 
-import ann.project.systemmonitoring.entity.imp.Terminal;
+import ann.project.systemmonitoring.entity.imp.TerminalImp;
 import ann.project.systemmonitoring.system.datageneration.consts.ConstTerminal;
 import ann.project.systemmonitoring.system.datageneration.DataGenerate;
 
@@ -8,14 +8,14 @@ import java.util.Date;
 import java.util.Random;
 
 
-public class DataGeneratorTerminal implements DataGenerate<Terminal> {
+public class DataGeneratorTerminal implements DataGenerate<TerminalImp> {
 
     private Random random = new Random();
 
 
     @Override
-    public Terminal generateData() {
-        Terminal data = new Terminal();
+    public TerminalImp generateData() {
+        TerminalImp data = new TerminalImp();
         data.setTerminalID("" + random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10));
         data.setTerminalType(ConstTerminal.terminalTypes.get(random.nextInt(ConstTerminal.terminalTypes.size())));
         data.setCurrentNode(Integer.toString(random.nextInt(3)+9, 2));

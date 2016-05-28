@@ -1,7 +1,7 @@
 package ann.project.systemmonitoring.system;
 
-import ann.project.systemmonitoring.entity.imp.IPCQueue;
-import ann.project.systemmonitoring.entity.imp.Terminal;
+import ann.project.systemmonitoring.entity.imp.IPCQueueImp;
+import ann.project.systemmonitoring.entity.imp.TerminalImp;
 import ann.project.systemmonitoring.repository.IPCQueueRepository;
 import ann.project.systemmonitoring.repository.TerminalRepository;
 import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorIPCQueue;
@@ -61,24 +61,24 @@ public class System {
 
     @Before("execution(* ann.project.systemmonitoring.controller.IPCQueueController.*getIPCQueue())")
     private void createDataForIPCQueue() {
-        Iterable<IPCQueue> all = ipcQueueRepository.findAll();
+        Iterable<IPCQueueImp> all = ipcQueueRepository.findAll();
         ipcQueueRepository.delete(all);
 
         for (int i = 0; i < random.nextInt(100); i++) {
-            IPCQueue ipcQueue = new DataGeneratorIPCQueue().generateData();
-            ipcQueueRepository.save(ipcQueue);
+            IPCQueueImp ipcQueueImp = new DataGeneratorIPCQueue().generateData();
+            ipcQueueRepository.save(ipcQueueImp);
         }
     }
 
 
     @Before("execution(* ann.project.systemmonitoring.controller.TerminalController.*getTerminal())")
     private void createDataForTerminal() {
-        Iterable<Terminal> all = terminalRepository.findAll();
+        Iterable<TerminalImp> all = terminalRepository.findAll();
         terminalRepository.delete(all);
 
         for (int i = 0; i < random.nextInt(100); i++) {
-            Terminal terminal = new DataGeneratorTerminal().generateData();
-            terminalRepository.save(terminal);
+            TerminalImp terminalImp = new DataGeneratorTerminal().generateData();
+            terminalRepository.save(terminalImp);
         }
     }
 }

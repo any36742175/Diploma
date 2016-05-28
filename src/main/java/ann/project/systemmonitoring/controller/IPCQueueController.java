@@ -1,6 +1,6 @@
 package ann.project.systemmonitoring.controller;
 
-import ann.project.systemmonitoring.entity.imp.IPCQueue;
+import ann.project.systemmonitoring.entity.imp.IPCQueueImp;
 import ann.project.systemmonitoring.repository.IPCQueueRepository;
 import ann.project.systemmonitoring.util.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +24,13 @@ public class IPCQueueController {
     }
 
     @ModelAttribute("IPCQueueList")
-    public List<IPCQueue> getIPCQueue() {
-        Iterator<IPCQueue> iterator = ipcQueueRepository.findAll().iterator();
-        List<IPCQueue> ipcQueueList = new ArrayList<>();
+    public List<IPCQueueImp> getIPCQueue() {
+        Iterator<IPCQueueImp> iterator = ipcQueueRepository.findAll().iterator();
+        List<IPCQueueImp> ipcQueueImpList = new ArrayList<>();
         while (iterator.hasNext()){
-            ipcQueueList.add(iterator.next());
+            ipcQueueImpList.add(iterator.next());
         }
-        return ipcQueueList;
+        return ipcQueueImpList;
     }
 
     @ModelAttribute("dateTime")

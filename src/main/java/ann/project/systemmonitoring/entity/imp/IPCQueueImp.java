@@ -1,5 +1,7 @@
 package ann.project.systemmonitoring.entity.imp;
 
+import ann.project.systemmonitoring.entity.IPCQueue;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "IPC_QUEUES")
-public class IPCQueue{
+public class IPCQueueImp implements IPCQueue{
     @Id
     @Column(name = "ID")
     //@GeneratedValue
@@ -89,7 +91,7 @@ public class IPCQueue{
 
     @Override
     public String toString() {
-        return "IPCQueue{" +
+        return "IPCQueueImp{" +
                 "queueId=" + queueId +
                 ", permission='" + permission + '\'' +
                 ", queueSize=" + queueSize +
