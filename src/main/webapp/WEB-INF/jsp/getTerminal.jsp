@@ -17,6 +17,7 @@
 </head>
 <body>
 
+<input type="text" id="dateTime" value="${dateTime}" style="width: 50%">
 <table border="1" width="50%">
     <caption>Terminal</caption>
     <tr>
@@ -26,18 +27,23 @@
         <th>Connection time</th>
         <th>Previous node</th>
         <th>Owning nodes</th>
-        <th>statuses</th>
+        <th>status</th>
     </tr>
     <c:forEach var="item" items="${terminalList}">
-        <tr>
+        <tr <c:if test="${item.getStatus().equals(\"Disabled\")}">
+                <c:out value="${\"bgcolor=#F34F4F\"}"/>
+            </c:if>
+                <c:if test="${item.getStatus().equals(\"Not Active\")}">
+                    <c:out value="${\"bgcolor=#FFF047\"}"/>
+                </c:if>
+        >
             <td><c:out value="${item.getTerminalID()}"/></td>
-            <td>SHM ID</td>
-            <td>Permission</td>
-            <td>Size</td>
-            <td>Proc number</td>
-            <td>Last Att, Det</td>
-            <td>Type</td>
-            <td>Owner</td>
+            <td><c:out value="${item.getTerminalType()}"/></td>
+            <td><c:out value="${item.getCurrentNode()}"/></td>
+            <td><c:out value="${item.getConnetcionTime()}"/></td>
+            <td><c:out value="${item.getPreviousNode()}"/></td>
+            <td><c:out value="${item.getOwningNodes()}"/></td>
+            <td><c:out value="${item.getStatus()}"/></td>
         </tr>
     </c:forEach>
 </table>

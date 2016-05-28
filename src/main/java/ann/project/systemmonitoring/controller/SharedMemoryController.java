@@ -2,6 +2,7 @@ package ann.project.systemmonitoring.controller;
 
 import ann.project.systemmonitoring.entity.SharedMemory;
 import ann.project.systemmonitoring.repository.SharedMemoryRepository;
+import ann.project.systemmonitoring.util.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -30,5 +31,10 @@ public class SharedMemoryController {
             sharedMemoryList.add(iterator.next());
         }
         return sharedMemoryList;
+    }
+
+    @ModelAttribute("dateTime")
+    public String dateTime() {
+        return DateTime.getCurrentDateTimeFormate();
     }
 }

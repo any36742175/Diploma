@@ -17,19 +17,19 @@ public class Terminal {
     private String terminalType;
 
     @Column(name = "CURRENT_NODE")//todo
-    private int currentNode;
+    private String currentNode;
 
     @Column(name = "CONNECTION_TIME")//todo
     private String connectionTime;
 
     @Column(name = "PREVIOUS_NODE")//todo
-    private int previousNode;
+    private String previousNode;
 
     @Column(name = "OWNING_NODES")
     private String owningNodes;
 
     @Column(name = "STATUSES")
-    private String statuses;
+    private String status;
 
     public String getTerminalID() {
         return terminalID;
@@ -47,11 +47,11 @@ public class Terminal {
         this.terminalType = terminalType;
     }
 
-    public int getCurrentNode() {
+    public String getCurrentNode() {
         return currentNode;
     }
 
-    public void setCurrentNode(int currentNode) {
+    public void setCurrentNode(String currentNode) {
         this.currentNode = currentNode;
     }
 
@@ -63,11 +63,11 @@ public class Terminal {
         this.connectionTime = connetcionTime;
     }
 
-    public int getPreviousNode() {
+    public String getPreviousNode() {
         return previousNode;
     }
 
-    public void setPreviousNode(int previousNode) {
+    public void setPreviousNode(String previousNode) {
         this.previousNode = previousNode;
     }
 
@@ -79,12 +79,12 @@ public class Terminal {
         this.owningNodes = owningNodes;
     }
 
-    public String getStatuses() {
-        return statuses;
+    public String getStatus() {
+        return status;
     }
 
-    public void setStatuses(String statuses) {
-        this.statuses = statuses;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -96,7 +96,7 @@ public class Terminal {
                 ", connetcionTime='" + connectionTime + '\'' +
                 ", previousNode='" + previousNode + '\'' +
                 ", owningNodes='" + owningNodes + '\'' +
-                ", statuses='" + statuses + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

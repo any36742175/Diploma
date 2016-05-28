@@ -22,6 +22,8 @@
             width: 50%; /* Ширина таблицы */
             border: 1px solid; /* Рамка вокруг таблицы */
             margin: auto; /* Выравниваем таблицу по центру окна  */
+            border: 2px solid CornflowerBlue;
+            border-radius: 10px;
         }
 
         td {
@@ -39,8 +41,9 @@
         <td><button type="button" onclick="loadDoc('/getTerminal', 'tableView')">Terminals</button></td>
     </tr>
     <tbody>
+
     <tr>
-        <td colspan="4"><div id="tableView"></div></td>
+        <td colspan="4" style="border-style:hidden"><div id="tableView"></div></td>
     </tr>
     </tbody>
 </table>

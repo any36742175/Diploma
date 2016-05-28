@@ -4,6 +4,7 @@ import ann.project.systemmonitoring.entity.IPCQueue;
 import ann.project.systemmonitoring.entity.Semaphore;
 import ann.project.systemmonitoring.repository.IPCQueueRepository;
 import ann.project.systemmonitoring.repository.SemaphoreRepository;
+import ann.project.systemmonitoring.util.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,5 +33,10 @@ public class IPCQueueController {
             ipcQueueList.add(iterator.next());
         }
         return ipcQueueList;
+    }
+
+    @ModelAttribute("dateTime")
+    public String dateTime() {
+        return DateTime.getCurrentDateTimeFormate();
     }
 }
