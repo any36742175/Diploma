@@ -1,4 +1,4 @@
-package ann.project.systemmonitoring.entity;
+package ann.project.systemmonitoring.entity.imp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

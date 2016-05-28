@@ -20,24 +20,34 @@
 <table border="1" width="50%">
     <caption>SEMAPHORE</caption>
     <tr>
-        <th>QUEUE Id</th>
+        <th>KEY</th>
+        <th>SEM ID</th>
         <th>Permission</th>
-        <th>Queue size</th>
-        <th>Messages</th>
+        <th>Sem. per key</th>
+        <th>Last change</th>
         <th>last Operation</th>
-        <th>Queue type</th>
+        <th>Type</th>
         <th>Owner</th>
     </tr>
-    <c:forEach var="item" items="${semaphoreList}">
-        <tr>
+    <c:forEach var="item" items="${semaphoreListRepeat}">
+        <tr
+                <c:choose>
+                    <c:when test="${item.isRepeat() || item.getType().equals(\"\")}">
+                        <c:out value="${\"bgcolor=#F34F4F\"}"/>
+                    </c:when>
+                    <c:otherwise>
+                        <c:out value="${\"bgcolor=#A7D152\"}"/>
+                    </c:otherwise>
+                </c:choose>
+        >
             <td><c:out value="${item.getKey()}"/></td>
-            <td>SHM ID</td>
-            <td>Permission</td>
-            <td>Size</td>
-            <td>Proc number</td>
-            <td>Last Att, Det</td>
-            <td>Type</td>
-            <td>Owner</td>
+            <td><c:out value="${item.getShm_id()}"/></td>
+            <td><c:out value="${item.getPermission()}"/></td>
+            <td><c:out value="${item.getSemPerKey()}"/></td>
+            <td><c:out value="${item.getLastChange()}"/></td>
+            <td><c:out value="${item.getLastOperation()}"/></td>
+            <td><c:out value="${item.getType()}"/></td>
+            <td><c:out value="${item.getOWNER()}"/></td>
         </tr>
     </c:forEach>
 </table>

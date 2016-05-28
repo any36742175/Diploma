@@ -1,7 +1,6 @@
 package ann.project.systemmonitoring.repository;
 
-import ann.project.systemmonitoring.entity.IPCQueue;
-import ann.project.systemmonitoring.entity.Terminal;
+import ann.project.systemmonitoring.entity.imp.Terminal;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;

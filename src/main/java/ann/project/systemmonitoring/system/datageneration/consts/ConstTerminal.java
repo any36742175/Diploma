@@ -1,7 +1,5 @@
 package ann.project.systemmonitoring.system.datageneration.consts;
 
-import ann.project.systemmonitoring.entity.Terminal;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,14 +1,14 @@
 package ann.project.systemmonitoring.system;
 
-import ann.project.systemmonitoring.entity.IPCQueue;
-import ann.project.systemmonitoring.entity.Terminal;
+import ann.project.systemmonitoring.entity.imp.IPCQueue;
+import ann.project.systemmonitoring.entity.imp.Terminal;
 import ann.project.systemmonitoring.repository.IPCQueueRepository;
 import ann.project.systemmonitoring.repository.TerminalRepository;
 import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorIPCQueue;
 import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorSemaphores;
 import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorSharedMemory;
-import ann.project.systemmonitoring.entity.Semaphore;
-import ann.project.systemmonitoring.entity.SharedMemory;
+import ann.project.systemmonitoring.entity.imp.SemaphoreImp;
+import ann.project.systemmonitoring.entity.imp.SharedMemoryImp;
 import ann.project.systemmonitoring.repository.SemaphoreRepository;
 import ann.project.systemmonitoring.repository.SharedMemoryRepository;
 import ann.project.systemmonitoring.system.datageneration.imp.DataGeneratorTerminal;
@@ -39,23 +39,23 @@ public class System {
 
     @Before("execution(* ann.project.systemmonitoring.controller.SharedMemoryController.*getSharedMemory())")
     private void createDataForSharedMemory() {
-        Iterable<SharedMemory> all = sharedMemoryRepository.findAll();
+        Iterable<SharedMemoryImp> all = sharedMemoryRepository.findAll();
         sharedMemoryRepository.delete(all);
 
         for (int i = 0; i < random.nextInt(100); i++) {
-            SharedMemory sharedMemory = new DataGeneratorSharedMemory().generateData();
-            sharedMemoryRepository.save(sharedMemory);
+            SharedMemoryImp sharedMemoryImp = new DataGeneratorSharedMemory().generateData();
+            sharedMemoryRepository.save(sharedMemoryImp);
         }
     }
 
     @Before("execution(* ann.project.systemmonitoring.controller.SemaphoreController.*getSemaphores())")
     private void createDataForSemaphore() {
-        Iterable<Semaphore> all = semaphoreRepository.findAll();
+        Iterable<SemaphoreImp> all = semaphoreRepository.findAll();
         semaphoreRepository.delete(all);
 
         for (int i = 0; i < random.nextInt(100); i++) {
-            Semaphore semaphore = new DataGeneratorSemaphores().generateData();
-            semaphoreRepository.save(semaphore);
+            SemaphoreImp semaphoreImp = new DataGeneratorSemaphores().generateData();
+            semaphoreRepository.save(semaphoreImp);
         }
     }
 

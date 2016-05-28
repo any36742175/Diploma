@@ -1,20 +1,20 @@
 package ann.project.systemmonitoring.system.datageneration.imp;
 
+import ann.project.systemmonitoring.entity.imp.SharedMemoryImp;
 import ann.project.systemmonitoring.system.datageneration.DataGenerate;
-import ann.project.systemmonitoring.entity.SharedMemory;
 import ann.project.systemmonitoring.system.datageneration.consts.ConstSharedMemory;
 
 import java.util.Date;
 import java.util.Random;
 
 
-public class DataGeneratorSharedMemory implements DataGenerate<SharedMemory> {
+public class DataGeneratorSharedMemory implements DataGenerate<SharedMemoryImp> {
 
     private Random random = new Random();
 
     @Override
-    public SharedMemory generateData() {
-        SharedMemory data = new SharedMemory();
+    public SharedMemoryImp generateData() {
+        SharedMemoryImp data = new SharedMemoryImp();
         data.setKey(random.nextInt(100) + 1000);
         data.setShm_id(random.nextInt(99999 - 10000) + 10000);
         data.setPermission("–rw-r----");

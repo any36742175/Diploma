@@ -1,26 +1,27 @@
 package ann.project.systemmonitoring.util.sharedmemory;
 
-import ann.project.systemmonitoring.decorator.sharedmemory.SharedMemoryRepeat;
+import ann.project.systemmonitoring.entity.decorator.sharedmemory.SharedMemoryRepeat;
 import ann.project.systemmonitoring.entity.SharedMemory;
+import ann.project.systemmonitoring.entity.imp.SharedMemoryImp;
 
 import java.util.*;
 
 public class SharedMemoryUtils {
 
-    public List<SharedMemoryRepeat> cheakRepeatSharedMemory(List<SharedMemory> sharedMemoryList){
-        List<SharedMemoryRepeat> sharedMemoryRepeats = new ArrayList<>();
+    public List<SharedMemory> checkRepeatSharedMemory(List<SharedMemoryImp> sharedMemoryImpList){
+        List<SharedMemory> sharedMemoryRepeats = new ArrayList<>();
         Set<EmptyTypeOwner> emptyTypeOwners = new HashSet<>();
 
-        for(SharedMemory sharedMemory: sharedMemoryList){
-            EmptyTypeOwner emptyTypeOwner = new EmptyTypeOwner(sharedMemory.getType(), sharedMemory.getOWNER());
+        for(SharedMemoryImp sharedMemoryImp : sharedMemoryImpList){
+            EmptyTypeOwner emptyTypeOwner = new EmptyTypeOwner(sharedMemoryImp.getType(), sharedMemoryImp.getOWNER());
 
             if(emptyTypeOwners.contains(emptyTypeOwner)){
-                SharedMemoryRepeat sharedMemoryRepeat = new SharedMemoryRepeat(sharedMemory);
+                SharedMemoryRepeat sharedMemoryRepeat = new SharedMemoryRepeat(sharedMemoryImp);
                 sharedMemoryRepeat.setRepeat(true);
                 sharedMemoryRepeats.add(sharedMemoryRepeat);
             } else {
                 emptyTypeOwners.add(emptyTypeOwner);
-                SharedMemoryRepeat sharedMemoryRepeat = new SharedMemoryRepeat(sharedMemory);
+                SharedMemoryRepeat sharedMemoryRepeat = new SharedMemoryRepeat(sharedMemoryImp);
                 sharedMemoryRepeat.setRepeat(false);
                 sharedMemoryRepeats.add(sharedMemoryRepeat);
             }

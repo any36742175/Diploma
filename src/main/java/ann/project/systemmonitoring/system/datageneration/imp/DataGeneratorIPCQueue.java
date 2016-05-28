@@ -1,6 +1,6 @@
 package ann.project.systemmonitoring.system.datageneration.imp;
 
-import ann.project.systemmonitoring.entity.IPCQueue;
+import ann.project.systemmonitoring.entity.imp.IPCQueue;
 import ann.project.systemmonitoring.system.datageneration.DataGenerate;
 
 import java.util.Date;

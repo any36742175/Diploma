@@ -31,14 +31,14 @@
     </tr>
     <c:forEach var="item" items="${SharedMemoryRepeatList}">
         <tr
-        <c:choose>
-            <c:when test="${item.isRepeat() || item.getType().equals(\"\")}">
-                <c:out value="${\"bgcolor=#F34F4F\"}"/>
-            </c:when>
-            <c:otherwise>
-                <c:out value="${\"bgcolor=#A7D152\"}"/>
-            </c:otherwise>
-        </c:choose>
+                <c:choose>
+                    <c:when test="${item.isRepeat() || item.getType().equals(\"\")}">
+                        <c:out value="${\"bgcolor=#F34F4F\"}"/>
+                    </c:when>
+                    <c:otherwise>
+                        <c:out value="${\"bgcolor=#A7D152\"}"/>
+                    </c:otherwise>
+                </c:choose>
         >
             <td><c:out value="${item.getKey()}"/></td>
             <td><c:out value="${item.getShm_id()}"/></td>

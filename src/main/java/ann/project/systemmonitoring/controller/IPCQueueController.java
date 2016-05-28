@@ -1,9 +1,7 @@
 package ann.project.systemmonitoring.controller;
 
-import ann.project.systemmonitoring.entity.IPCQueue;
-import ann.project.systemmonitoring.entity.Semaphore;
+import ann.project.systemmonitoring.entity.imp.IPCQueue;
 import ann.project.systemmonitoring.repository.IPCQueueRepository;
-import ann.project.systemmonitoring.repository.SemaphoreRepository;
 import ann.project.systemmonitoring.util.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

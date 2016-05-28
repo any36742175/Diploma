@@ -1,7 +1,7 @@
 package ann.project.systemmonitoring.controller;
 
-import ann.project.systemmonitoring.decorator.sharedmemory.SharedMemoryRepeat;
 import ann.project.systemmonitoring.entity.SharedMemory;
+import ann.project.systemmonitoring.entity.imp.SharedMemoryImp;
 import ann.project.systemmonitoring.repository.SharedMemoryRepository;
 import ann.project.systemmonitoring.util.DateTime;
 import ann.project.systemmonitoring.util.sharedmemory.SharedMemoryUtils;
@@ -28,13 +28,17 @@ public class SharedMemoryController {
     }
 
     @ModelAttribute("SharedMemoryRepeatList")
-    public List<SharedMemoryRepeat> getSharedMemory() {
-        Iterator<SharedMemory> iterator = sharedMemoryRepository.findAll().iterator();
-        List<SharedMemory> sharedMemoryList = new ArrayList<>();
+    public List<SharedMemory> getSharedMemory() {
+        return getSharedMemoryRepeat();
+    }
+
+    public List<SharedMemory> getSharedMemoryRepeat() {
+        Iterator<SharedMemoryImp> iterator = sharedMemoryRepository.findAll().iterator();
+        List<SharedMemoryImp> sharedMemoryImpList = new ArrayList<>();
         while (iterator.hasNext()){
-            sharedMemoryList.add(iterator.next());
+            sharedMemoryImpList.add(iterator.next());
         }
-        return sharedMemoryUtils.cheakRepeatSharedMemory(sharedMemoryList);
+        return sharedMemoryUtils.checkRepeatSharedMemory(sharedMemoryImpList);
     }
 
     @ModelAttribute("dateTime")

@@ -1,6 +1,6 @@
 package ann.project.systemmonitoring.system.datageneration.imp;
 
-import ann.project.systemmonitoring.entity.Terminal;
+import ann.project.systemmonitoring.entity.imp.Terminal;
 import ann.project.systemmonitoring.system.datageneration.consts.ConstTerminal;
 import ann.project.systemmonitoring.system.datageneration.DataGenerate;
 
