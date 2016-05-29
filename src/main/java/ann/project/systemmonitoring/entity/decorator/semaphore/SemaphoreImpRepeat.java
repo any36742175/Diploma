@@ -3,6 +3,9 @@ package ann.project.systemmonitoring.entity.decorator.semaphore;
 import ann.project.systemmonitoring.entity.Semaphore;
 import ann.project.systemmonitoring.entity.imp.SemaphoreImp;
 
+/**
+ * Декоратор, добаляет в semaphoreImp новое поле boolean repeat
+ */
 public class SemaphoreImpRepeat implements Semaphore {
     private SemaphoreImp semaphoreImp;
     private boolean repeat;

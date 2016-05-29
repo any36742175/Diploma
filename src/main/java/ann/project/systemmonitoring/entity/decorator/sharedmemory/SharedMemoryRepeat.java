@@ -3,6 +3,9 @@ package ann.project.systemmonitoring.entity.decorator.sharedmemory;
 import ann.project.systemmonitoring.entity.SharedMemory;
 import ann.project.systemmonitoring.entity.imp.SharedMemoryImp;
 
+/**
+ * Декоратор, добаляет в SharedMemoryImp новое поле boolean repeat
+ */
 public class SharedMemoryRepeat implements SharedMemory {
     private SharedMemoryImp sharedMemoryImp;
     private boolean repeat;

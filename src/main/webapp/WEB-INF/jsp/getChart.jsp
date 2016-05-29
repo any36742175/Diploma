@@ -40,7 +40,9 @@
             chart.draw(data, {
                 /*width: 400, height: 240, title: 'Messages',*/
                 isStacked: true,
-                vAxis: {title: 'time', titleTextStyle: {color: 'red'}}
+                vAxis: {title: 'time', titleTextStyle: {color: 'black'}},
+                hAxis: {title: 'messages', titleTextStyle: {color: 'black'}}
+
             });
         }
     </script>

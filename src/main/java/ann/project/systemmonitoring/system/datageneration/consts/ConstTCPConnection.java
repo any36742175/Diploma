@@ -3,7 +3,7 @@ package ann.project.systemmonitoring.system.datageneration.consts;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConstTCPConnection {
+public final class ConstTCPConnection {
     public static List<String> states = new ArrayList<String>() {
         {
             add("LISTENING");

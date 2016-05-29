@@ -11,6 +11,11 @@ import java.util.Set;
 
 public class SharedMemoryUtils {
 
+
+    /**
+     * Помечает все элементы SharedMemory меткой о повторении и возвращает их.
+     * Для пометки используется шаблон декоратор(неправильный) SharedMemoryRepeat расширяет SharedMemory(а должен SharedMemoryImp) информацией о повторениях
+     */
     public List<SharedMemory> checkRepeatSharedMemory(List<SharedMemoryImp> sharedMemoryImpList) {
         List<SharedMemory> sharedMemoryRepeats = new ArrayList<>();
         Set<EmptyTypeOwner> emptyTypeOwners = new HashSet<>();

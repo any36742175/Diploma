@@ -10,6 +10,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
+/**
+ * Класс, которые перед каждым запросом данных из репозитория,
+ * указанными классами в аннотации метода, обноляет его данные с помощью реализация метода DataGenerate
+ */
+
+/*Позволяет привязывать методы к вызовам других методов*/
 @Aspect
 @Component
 public class System {

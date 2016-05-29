@@ -4,31 +4,18 @@ import ann.project.systemmonitoring.entity.imp.IPCQueueImp;
 
 import java.util.*;
 
+/**
+ * Класс выводящий график
+ */
+
 public class Chart {
-    public List<Point> getChart(List<IPCQueueImp> ipcQueueImps) {
-        List<Point> points = new ArrayList<>();
-        Map<String, Integer> pointsMap = new HashMap<>();
-        for (IPCQueueImp ipcQueueImp : ipcQueueImps) {
-            Integer messages = pointsMap.get(ipcQueueImp.getLastOperation());
-            if (messages == null) {
-                pointsMap.put(ipcQueueImp.getLastOperation(), ipcQueueImp.getMessages());
-            } else {
-                pointsMap.put(ipcQueueImp.getLastOperation(), messages + ipcQueueImp.getMessages());
-            }
-        }
-
-        int i = 0;
-        for (Map.Entry<String, Integer> entry :
-                pointsMap.entrySet()
-                ) {
-            Point point = new Point(entry.getKey(), entry.getValue());
-            point.setNumber(i++);
-            points.add(point);
-        }
-
-        return points;
-    }
-
+    /**
+     * key - дата и время в формате строки
+     * value-map, где key - тип сообщения, value - количество сообщений
+     * <p>
+     * т.е. собирается информация:
+     * Момент времени, тип сообщений которые были в этот момент времени, количество сообщений с каждым типом
+     */
     public Map<String, Map<String, Integer>> getChartMap(List<IPCQueueImp> ipcQueueImps) {
         Collections.sort(ipcQueueImps);
         Map<String, Map<String, Integer>> chartMap = new TreeMap<>();

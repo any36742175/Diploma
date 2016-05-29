@@ -38,7 +38,7 @@ public class SemaphoreController {
         while (iterator.hasNext()) {
             semaphoreImpList.add(iterator.next());
         }
-        return sharedMemoryUtils.checkRepeatSharedMemory(semaphoreImpList);
+        return sharedMemoryUtils.checkRepeatSemaphore(semaphoreImpList);
     }
 
     @ModelAttribute("dateTime")

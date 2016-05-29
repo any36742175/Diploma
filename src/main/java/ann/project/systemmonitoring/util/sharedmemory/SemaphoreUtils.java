@@ -12,7 +12,11 @@ import java.util.Set;
 
 public class SemaphoreUtils {
 
-    public List<Semaphore> checkRepeatSharedMemory(List<SemaphoreImp> semaphoreImpList) {
+    /**
+     * Помечает все элементы Semaphore меткой о повторении и возвращает их.
+     * Для пометки используется шаблон декоратор(неправильный) SemaphoreRepeat расширяет Semaphore(а должен SemaphoreImp) информацией о повторениях
+     */
+    public List<Semaphore> checkRepeatSemaphore(List<SemaphoreImp> semaphoreImpList) {
         List<Semaphore> semaphoreRepeatList = new ArrayList<>();
         Set<EmptyTypeOwner> emptyTypeOwners = new HashSet<>();
 

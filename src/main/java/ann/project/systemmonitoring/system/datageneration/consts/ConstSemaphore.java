@@ -3,7 +3,7 @@ package ann.project.systemmonitoring.system.datageneration.consts;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConstSemaphore {
+public final class ConstSemaphore {
 
     public static List<String> types = new ArrayList<String>() {
         {

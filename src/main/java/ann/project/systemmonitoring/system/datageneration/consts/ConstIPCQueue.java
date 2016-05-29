@@ -3,7 +3,7 @@ package ann.project.systemmonitoring.system.datageneration.consts;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConstIPCQueue {
+public final class ConstIPCQueue {
 
     public static List<String> types = new ArrayList<String>() {
         {

@@ -3,7 +3,7 @@ package ann.project.systemmonitoring.system.datageneration.consts;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConstTerminal {
+public final class ConstTerminal {
     public static String NOT_ACTIVE = "Not Active";
     public static String ACTIVE = "Active";
     public static String DISABLED = "Disabled";
