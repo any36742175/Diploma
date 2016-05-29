@@ -23,7 +23,7 @@ public class DataGeneratorIPCQueue implements DataGenerate<IPCQueueImp> {
         java.text.SimpleDateFormat sdf =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        data.setLastOperation((sdf.format(new Date(java.lang.System.currentTimeMillis() - 1000 * 60))));
+        data.setLastOperation((sdf.format(new Date(java.lang.System.currentTimeMillis() - 1000 * 60 - 500 * random.nextInt(30)))));
         data.setType(ConstIPCQueue.types.get(random.nextInt(ConstIPCQueue.types.size())));
         if (data.getType().equals("")) {
             data.setOWNER("");

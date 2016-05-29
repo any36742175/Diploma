@@ -23,7 +23,8 @@ public class Main {
              "<br><a href='/getIPCQueue'>/getIPCQueue</a></br>" +
              "<br><a href='/getTerminal'>/getTerminal</a></br>" +
                 "<br><a href='/getSharedMemory'>/getSharedMemory</a></br>" +
-                "<br><a href='/getSharedMemory'>/getTCPConnection</a></br>";
+                "<br><a href='/getTCPConnectionChart'>/getTCPConnectionChart</a></br>" +
+                "<br><a href='/getTCPConnection'>/getTCPConnection</a></br>";
     }
 
     @Bean
