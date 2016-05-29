@@ -31,8 +31,8 @@
     </tr>
     <c:forEach var="item" items="${terminalList}">
         <tr <c:if test="${item.getStatus().equals(\"Disabled\")}">
-                <c:out value="${\"bgcolor=#F34F4F\"}"/>
-            </c:if>
+            <c:out value="${\"bgcolor=#F34F4F\"}"/>
+        </c:if>
                 <c:if test="${item.getStatus().equals(\"Not Active\")}">
                     <c:out value="${\"bgcolor=#FFF047\"}"/>
                 </c:if>

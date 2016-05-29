@@ -15,10 +15,10 @@ public class DataGeneratorIPCQueue implements DataGenerate<IPCQueueImp> {
     @Override
     public IPCQueueImp generateData() {
         IPCQueueImp data = new IPCQueueImp();
-        data.setQueueId("" + random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10)+ random.nextInt(10));
+        data.setQueueId("" + random.nextInt(10) + random.nextInt(10) + random.nextInt(10) + random.nextInt(10));
         data.setPermission("–rw-r----");
         data.setQueueSize(random.nextInt(99999999 - 1000000) + 1000000);
-        data.setMessages(random.nextInt(99-1)+1);
+        data.setMessages(random.nextInt(99 - 1) + 1);
 
         java.text.SimpleDateFormat sdf =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

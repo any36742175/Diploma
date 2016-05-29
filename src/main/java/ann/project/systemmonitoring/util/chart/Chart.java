@@ -1,6 +1,5 @@
 package ann.project.systemmonitoring.util.chart;
 
-import ann.project.systemmonitoring.entity.IPCQueue;
 import ann.project.systemmonitoring.entity.imp.IPCQueueImp;
 
 import java.util.*;

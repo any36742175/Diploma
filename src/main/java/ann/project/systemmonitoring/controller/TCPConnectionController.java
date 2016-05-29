@@ -1,6 +1,7 @@
 package ann.project.systemmonitoring.controller;
 
 //import ann.project.systemmonitoring.repository.TCPConnectionRepository;
+
 import ann.project.systemmonitoring.entity.TCPConnection;
 import ann.project.systemmonitoring.entity.imp.TCPConnectionImp;
 import ann.project.systemmonitoring.repository.TCPConnectionRepository;
@@ -29,7 +30,7 @@ public class TCPConnectionController {
     public List<TCPConnection> getTCPConnectionList() {
         Iterator<TCPConnectionImp> iterator = tcpConnectionRepository.findAll().iterator();
         List<TCPConnection> tcpConnectionsList = new ArrayList<>();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             tcpConnectionsList.add(iterator.next());
         }
         return tcpConnectionsList;

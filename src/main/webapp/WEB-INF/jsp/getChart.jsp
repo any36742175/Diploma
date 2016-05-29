@@ -34,30 +34,6 @@
 
             ]);
 
-
-            /*new google.visualization.DataTable();
-             // define columns. It will represent x axis and y axis
-             data.addColumn('timeofday', 'time');
-             data.addColumn('number', 'messages');
-             // add data to chart
-             data.addRows(
-            <c:out value="${pointList.size()}"/>);
-
-            <c:forEach var="item" items="${pointList}">
-             data.setValue(
-            <c:out value="${item.getNumber()}"/>, 0, [
-            <c:out value="${item.getHour()}"/>,
-            <c:out value="${item.getMinute()}"/>,
-            <c:out value="${item.getSecunde()}"/>]);
-             data.setValue(
-            <c:out value="${item.getNumber()}"/>, 1,
-            <c:out value="${item.getY()}"/>);
-             data.setValue(
-            <c:out value="${item.getNumber()}"/>, 2,
-            <c:out value="${item.getY()}"/>);
-            </c:forEach>*/
-
-
             var chart = new
                     google.visualization.BarChart(document.getElementById('chart_div'));
             // set chart options
@@ -110,9 +86,3 @@
 </body>
 </html>
 
-<%--
-
-<c:forEach var="item" items="${pointList}">
-    data.setValue(<c:out value="${item.getNumber()}"/>, 0, <c:out value="${item.getX()}"/>);
-    data.setValue(<c:out value="${item.getNumber()}"/>, 1, <c:out value="${item.getY()}"/>);
-</c:forEach>--%>

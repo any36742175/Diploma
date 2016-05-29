@@ -1,7 +1,5 @@
 package ann.project.systemmonitoring.util.chart;
 
-import java.util.Random;
-
 public class Point {
     private String time = "";
     private Integer y = 0;
@@ -61,9 +59,9 @@ public class Point {
     public Point(String time, Integer y) {
         this.time = time;
         this.y = y;
-        hour = Integer.valueOf(time.substring(11,13));
-        minute = Integer.valueOf(time.substring(14,16));
-        secunde = Integer.valueOf(time.substring(17,19));
+        hour = Integer.valueOf(time.substring(11, 13));
+        minute = Integer.valueOf(time.substring(14, 16));
+        secunde = Integer.valueOf(time.substring(17, 19));
     }
 
     @Override

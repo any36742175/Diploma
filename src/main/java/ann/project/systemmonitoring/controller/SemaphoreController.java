@@ -35,7 +35,7 @@ public class SemaphoreController {
     public List<Semaphore> getSemaphoresRepeat() {
         Iterator<SemaphoreImp> iterator = semaphoreRepository.findAll().iterator();
         List<SemaphoreImp> semaphoreImpList = new ArrayList<>();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             semaphoreImpList.add(iterator.next());
         }
         return sharedMemoryUtils.checkRepeatSharedMemory(semaphoreImpList);

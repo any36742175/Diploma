@@ -5,7 +5,7 @@
 <script>
     function loadDoc(url, elementId) {
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
+        xhttp.onreadystatechange = function () {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
                 document.getElementById(elementId).innerHTML = xhttp.responseText;
             }
@@ -35,16 +35,28 @@
 
 <table>
     <tr>
-        <td><button type="button" onclick="loadDoc('/getSharedMemory', 'tableView')">Shared memory</button></td>
-        <td><button type="button" onclick="loadDoc('/getSemaphores', 'tableView')">Semaphores</button></td>
-        <td><button type="button" onclick="loadDoc('/getIPCQueue', 'tableView')">IPC queues</button></td>
-        <td><button type="button" onclick="loadDoc('/getTerminal', 'tableView')">Terminals</button></td>
-        <td><button type="button" onclick="loadDoc('/getTCPConnection', 'tableView')">TCP</button></td>
+        <td>
+            <button type="button" onclick="loadDoc('/getSharedMemory', 'tableView')">Shared memory</button>
+        </td>
+        <td>
+            <button type="button" onclick="loadDoc('/getSemaphores', 'tableView')">Semaphores</button>
+        </td>
+        <td>
+            <button type="button" onclick="loadDoc('/getIPCQueue', 'tableView')">IPC queues</button>
+        </td>
+        <td>
+            <button type="button" onclick="loadDoc('/getTerminal', 'tableView')">Terminals</button>
+        </td>
+        <td>
+            <button type="button" onclick="loadDoc('/getTCPConnection', 'tableView')">TCP</button>
+        </td>
     </tr>
     <tbody>
 
     <tr>
-        <td colspan="4" style="border-style:hidden"><div id="tableView"></div></td>
+        <td colspan="4" style="border-style:hidden">
+            <div id="tableView"></div>
+        </td>
     </tr>
     </tbody>
 </table>

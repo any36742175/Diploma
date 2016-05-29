@@ -35,7 +35,7 @@ public class SharedMemoryController {
     public List<SharedMemory> getSharedMemoryRepeat() {
         Iterator<SharedMemoryImp> iterator = sharedMemoryRepository.findAll().iterator();
         List<SharedMemoryImp> sharedMemoryImpList = new ArrayList<>();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             sharedMemoryImpList.add(iterator.next());
         }
         return sharedMemoryUtils.checkRepeatSharedMemory(sharedMemoryImpList);

@@ -58,7 +58,7 @@ public class System {
         Iterable<IPCQueueImp> all = ipcQueueRepository.findAll();
         ipcQueueRepository.delete(all);
 
-        for (int i = 0; i < random.nextInt(1000)+500; i++) {
+        for (int i = 0; i < random.nextInt(1000) + 500; i++) {
             IPCQueueImp ipcQueueImp = new DataGeneratorIPCQueue().generateData();
             ipcQueueRepository.save(ipcQueueImp);
         }

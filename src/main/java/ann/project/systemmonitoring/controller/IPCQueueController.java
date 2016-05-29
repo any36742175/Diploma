@@ -27,7 +27,7 @@ public class IPCQueueController {
     public List<IPCQueueImp> getIPCQueue() {
         Iterator<IPCQueueImp> iterator = ipcQueueRepository.findAll().iterator();
         List<IPCQueueImp> ipcQueueImpList = new ArrayList<>();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             ipcQueueImpList.add(iterator.next());
         }
         return ipcQueueImpList;

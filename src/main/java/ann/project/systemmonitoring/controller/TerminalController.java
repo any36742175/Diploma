@@ -27,7 +27,7 @@ public class TerminalController {
     public List<TerminalImp> getTerminal() {
         Iterator<TerminalImp> iterator = terminalRepository.findAll().iterator();
         List<TerminalImp> terminalImpList = new ArrayList<>();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             terminalImpList.add(iterator.next());
         }
         return terminalImpList;

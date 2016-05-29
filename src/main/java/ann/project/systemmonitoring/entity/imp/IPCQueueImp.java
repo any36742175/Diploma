@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "IPC_QUEUES")
-public class IPCQueueImp implements IPCQueue, Comparable<IPCQueueImp>{
+public class IPCQueueImp implements IPCQueue, Comparable<IPCQueueImp> {
     @Id
     @Column(name = "ID")
     //@GeneratedValue
