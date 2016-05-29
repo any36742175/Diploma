@@ -1,5 +1,9 @@
 package ann.project.systemmonitoring.util.sharedmemory;
 
+/**
+ * Класс которые содержит информацию о type и owner.
+ * Используется при поиске повторений по этим полям в SemaphoreUtils и SharedMemoryUtils.
+ */
 public class EmptyTypeOwner {
     private String type;
     private String owner;

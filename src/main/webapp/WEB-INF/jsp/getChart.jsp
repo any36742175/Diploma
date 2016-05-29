@@ -35,10 +35,12 @@
             ]);
 
             var chart = new
-                    google.visualization.BarChart(document.getElementById('chart_div'));
+                    google.visualization.ColumnChart(document.getElementById('chart_div'));
             // set chart options
             chart.draw(data, {
                 /*width: 400, height: 240, title: 'Messages',*/
+                legend: { position: 'top', maxLines: 3 },
+               /* bar: { groupWidth: '75%' },*/
                 isStacked: true,
                 vAxis: {title: 'time', titleTextStyle: {color: 'black'}},
                 hAxis: {title: 'messages', titleTextStyle: {color: 'black'}}
@@ -48,7 +50,6 @@
     </script>
 
     <head>
-
         <style>
             table {
                 width: 50%; /* Ширина таблицы */
