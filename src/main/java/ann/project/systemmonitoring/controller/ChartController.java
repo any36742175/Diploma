@@ -24,17 +24,17 @@ import java.util.Map;
 
 @Controller
 /*IPCQueue*/
-public class TCPConnectionChartController {
+public class ChartController {
 
     @Autowired
     private IPCQueueRepository ipcQueueRepository;
 
-    @RequestMapping("/getTCPConnectionChart")
+    @RequestMapping("/getChart")
     public String index() {
-        return "getTCPConnectionChart";
+        return "getChart";
     }
 
-    @ModelAttribute("pointList")
+   /* @ModelAttribute("pointList")
     public List<Point> getTCPConnectionList() {
         Iterator<IPCQueueImp> iterator = ipcQueueRepository.findAll().iterator();
         List<IPCQueueImp> tcpConnectionsList = new ArrayList<>();
@@ -44,9 +44,9 @@ public class TCPConnectionChartController {
 
 
         return new Chart().getChart(tcpConnectionsList);
-    }
+    }*/
     @ModelAttribute("pointMap")
-    public Map<String, Map<String, Integer>>  getTCPConnectionMap() {
+    public Map<String, Map<String, Integer>>  getIPCQueueMap() {
         Iterator<IPCQueueImp> iterator = ipcQueueRepository.findAll().iterator();
         List<IPCQueueImp> tcpConnectionsList = new ArrayList<>();
         while (iterator.hasNext()) {

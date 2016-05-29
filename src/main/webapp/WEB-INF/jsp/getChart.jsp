@@ -20,9 +20,9 @@
         function drawChart() {
             // configure Chart Details
             var data = google.visualization.arrayToDataTable([
-                ["Genre",'HSM messages', 'tcpcomms', 'Crout messages', 'Authorization', "", { role: 'annotation' } ]
+                ["Genre", 'HSM messages', 'tcpcomms', 'Crout messages', 'Authorization', "", {role: 'annotation'}]
                 <c:forEach var="timeTypeNUmber" items="${pointMap.entrySet()}">
-                ,["<c:out value="${timeTypeNUmber.getKey()}"/>",
+                , ["<c:out value="${timeTypeNUmber.getKey()}"/>",
                     <c:out value="${(timeTypeNUmber.getValue().get(\"HSM messages\")==null)?0:timeTypeNUmber.getValue().get(\"HSM messages\")}"/>,
                     <c:out value="${(timeTypeNUmber.getValue().get(\"tcpcomms\")==null)?0:timeTypeNUmber.getValue().get(\"tcpcomms\")}"/>,
                     <c:out value="${(timeTypeNUmber.getValue().get(\"Crout messages\")==null)?0:timeTypeNUmber.getValue().get(\"Crout messages\")}"/>,
@@ -36,16 +36,25 @@
 
 
             /*new google.visualization.DataTable();
-            // define columns. It will represent x axis and y axis
-            data.addColumn('timeofday', 'time');
-            data.addColumn('number', 'messages');
-            // add data to chart
-            data.addRows(<c:out value="${pointList.size()}"/>);
+             // define columns. It will represent x axis and y axis
+             data.addColumn('timeofday', 'time');
+             data.addColumn('number', 'messages');
+             // add data to chart
+             data.addRows(
+            <c:out value="${pointList.size()}"/>);
 
             <c:forEach var="item" items="${pointList}">
-                data.setValue(<c:out value="${item.getNumber()}"/>, 0, [<c:out value="${item.getHour()}"/>, <c:out value="${item.getMinute()}"/>, <c:out value="${item.getSecunde()}"/>]);
-                data.setValue(<c:out value="${item.getNumber()}"/>, 1, <c:out value="${item.getY()}"/>);
-                data.setValue(<c:out value="${item.getNumber()}"/>, 2, <c:out value="${item.getY()}"/>);
+             data.setValue(
+            <c:out value="${item.getNumber()}"/>, 0, [
+            <c:out value="${item.getHour()}"/>,
+            <c:out value="${item.getMinute()}"/>,
+            <c:out value="${item.getSecunde()}"/>]);
+             data.setValue(
+            <c:out value="${item.getNumber()}"/>, 1,
+            <c:out value="${item.getY()}"/>);
+             data.setValue(
+            <c:out value="${item.getNumber()}"/>, 2,
+            <c:out value="${item.getY()}"/>);
             </c:forEach>*/
 
 
@@ -59,9 +68,44 @@
             });
         }
     </script>
+
+    <head>
+
+        <style>
+            table {
+                width: 50%; /* Ширина таблицы */
+                border: 1px solid; /* Рамка вокруг таблицы */
+                margin: auto; /* Выравниваем таблицу по центру окна  */
+                border: 2px solid CornflowerBlue;
+                border-radius: 10px;
+            }
+
+            td {
+                text-align: center; /* Выравниваем текст по центру ячейки */
+            }
+        </style>
+    </head>
 </head>
 <body onload="drawChart();">
-<div id="chart_div" style="width: 50%; height: <c:out value="${pointMap.entrySet().size()*20}"/>px"></div>
+<table>
+    <tr>
+        <td><input type="button" value="Shared memory" onClick='location.href="/index"'></td>
+        <td><input type="button" value="Semaphores" onClick='location.href="/index"'></td>
+        <td><input type="button" value="IPC queues" onClick='location.href="/index"'></td>
+        <td><input type="button" value="Terminals" onClick='location.href="/index"'></td>
+        <td><input type="button" value="TCP" onClick='location.href="/index"'></td>
+    </tr>
+    <tbody>
+
+    <tr>
+        <td colspan="4" style="border-style:hidden">
+            <div id="tableView"></div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<center>Chart</center>
+<div id="chart_div" style="width: 50%; margin: auto; height: <c:out value="${pointMap.entrySet().size()*20}"/>px"></div>
 </div>
 </body>
 </html>

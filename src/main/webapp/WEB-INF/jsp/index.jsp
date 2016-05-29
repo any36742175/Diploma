@@ -40,8 +40,6 @@
         <td><button type="button" onclick="loadDoc('/getIPCQueue', 'tableView')">IPC queues</button></td>
         <td><button type="button" onclick="loadDoc('/getTerminal', 'tableView')">Terminals</button></td>
         <td><button type="button" onclick="loadDoc('/getTCPConnection', 'tableView')">TCP</button></td>
-        <td><button type="button" onclick="loadDoc('/getTCPConnectionChart', 'tableView')">getTCPConnectionChart</button></td>
-        <td><a href="/getTCPConnectionChart">Chart</a></td>
     </tr>
     <tbody>
 

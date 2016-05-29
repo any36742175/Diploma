@@ -17,6 +17,7 @@
 </head>
 <body>
 <input type="text" id="dateTime" value="${dateTime}" style="width: 50%">
+<a href="/getChart">Chart</a>
 <table border="1" width="50%">
     <caption>IPC Queue</caption>
     <tr>
